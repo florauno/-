@@ -1,0 +1,64 @@
+<!DOCYPE html>
+<html lang="ko">
+	<head>
+		<title>Canvas01</title>
+		<meta charset="UTF-8">
+		<style>
+			body{ margin:10px; background: #D0D0D0; }
+			#myCanvas{ background: #000000; border:#909090 0.2px solid;}
+
+			.mouse{
+				font-size: 5rem;
+				color: white;
+			}
+		</style>
+	</head>
+		<body>
+			<canvas id="myCanvas" width="800" height="800">CANVAS를 지원하지 않습니다.</canvas>
+
+			<script>
+				var canvas = document.getElementById("myCanvas");
+				var ctx = canvas.getContext("2d");
+
+			 	for(var x=10; x<canvas.width; x=x+30)
+			  	{
+			    for(var y=10; y<canvas.height; y=y+30)
+			    {     
+			         ctx.fillStyle="rgba("+r+","+g+","+b+","+a+")";
+			         ctx.fillRect(x,y,10,10);
+			         var r,g,b,a,size,x,y;
+
+			         r=Math.round(Math.random()*255);
+			         g=Math.round(Math.random()*255);
+			         b=Math.round(Math.random()*255);
+			         a=Math.random();
+			    }
+			    }
+
+
+				ctx.strokeStyle = 'pink';
+				ctx.lineWidth = 1.5;
+
+				ctx.translate(400,400);
+				for (var i=0; i<200; i++) {
+				var num1 =Math.floor(Math.random()*200);
+				var num2 =Math.floor(Math.random()*200);
+				ctx.rotate(50*Math.PI / 360);
+				var num = Math.floor(Math.random()*100);
+				ctx.strokeRect(100,100,num+20,num+20);
+				//ctx.fillRect(30,30,num+4,num+4);
+				ctx.stroke();
+				//ctx.arc(200,200,num+80,0,Math.PI*2);
+				ctx.restore();
+				ctx.beginPath();
+				ctx.moveTo(60, 30);
+				ctx.lineTo(0, 200);
+				};
+	</script>
+	<audio autoplay controls> <source src="음악.mp3" type="audio/mp3"> </audio>
+	<p>제목 : 지쳐있는 마음에 조그마한 재미를 주기 위해</p>
+	<p>과제를 하며 지쳐있는 마음에 즐거움을 주기 위해 제작해 보았다.</p>
+	<p>또 코로나로 인해 쉽게 노래방을 찾지 못하는 사람들에게 자그마한 선물처럼</p>
+	<p>마치 노래방에 온 듯한 느낌을 표현해 보았습니다.</p>
+
+</body>
